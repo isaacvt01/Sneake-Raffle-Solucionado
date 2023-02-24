@@ -12,10 +12,22 @@ public class Bucket {
     public Bucket() {}
 
     public void add(Entry entry){
-        entries.add(entry);
+        if (!isDoubleEntry(entry)){
+            entries.add(entry);
+        }
+
     }
     public Integer totalEntries(){
         return this.entries.size();
+    }
+
+    private Boolean isDoubleEntry(Entry entry){
+        for (Entry comparacion : entries){
+            if (entry.equals(comparacion)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

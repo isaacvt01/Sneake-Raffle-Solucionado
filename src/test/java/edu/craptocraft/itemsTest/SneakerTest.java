@@ -12,6 +12,8 @@ import edu.craptocraft.items.Sizes;
 public class SneakerTest {
     private Sneaker sneaker;
     private Entry entry;
+
+    private Entry doubleEntry;
     @Before
     public void setUp() {
         sneaker = new Sneaker("Nike Craft General Purpose", "Brown", 109.99);
@@ -24,7 +26,11 @@ public class SneakerTest {
         entry.setTotal(sneaker.price());
         entry.payment("squanchy@paypal.com");
 
+        Entry doubleEntry = new Entry("squan.chy@closet.in");
+        doubleEntry.payment("squanchy@paypal.com");
+
         sneaker.register(entry);
+        sneaker.register(doubleEntry);
     }
 
     @Test
@@ -49,6 +55,7 @@ public class SneakerTest {
 
     @Test
     public void totalEntriesTest() {
+        //Se han intentado ingresar 2, pero solo debe haber uno porque está repetido
         Integer esperado = 1;
         assertEquals(esperado, sneaker.totalEntries());
     }

@@ -46,14 +46,17 @@ public class Entry {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object comparado) {
+        if (this == comparado) return true;
+        if (comparado == null || getClass() != comparado.getClass()) return false;
 
-        Entry entry = (Entry) o;
+        Entry entry = (Entry) comparado;
 
-        if (!email.equals(entry.email)) return false;
-        return payment.equals(entry.payment);
+        if (email.equals(entry.email)|| payment.equals(entry.payment)) return true;
+        else{
+            return false;
+        }
+
     }
 
     @Override
