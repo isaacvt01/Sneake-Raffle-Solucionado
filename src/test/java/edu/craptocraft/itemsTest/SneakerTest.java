@@ -14,6 +14,11 @@ public class SneakerTest {
     private Entry entry;
 
     private Entry doubleEntry;
+    private Entry summer ;
+    private Entry morty ;
+    private Entry  birdman ;
+
+
     @Before
     public void setUp() {
         sneaker = new Sneaker("Nike Craft General Purpose", "Brown", 109.99);
@@ -26,11 +31,35 @@ public class SneakerTest {
         entry.setTotal(sneaker.price());
         entry.payment("squanchy@paypal.com");
 
-        Entry doubleEntry = new Entry("squan.chy@closet.in");
+        doubleEntry = new Entry("squan.chy@closet.in");
         doubleEntry.payment("squanchy@paypal.com");
 
         sneaker.register(entry);
         sneaker.register(doubleEntry);
+
+        birdman = new Entry("birdman@love.in");
+        birdman.setUserName("Birdman");
+        birdman.setSize(Sizes.CUARENTA);
+        birdman.setAddress("Melrose Place, 90210, Los Angeles");
+        birdman.setTotal(sneaker.price());
+        birdman.payment("birdman@paypal.com");
+
+        morty = new Entry("morty@business.com");
+        morty.setUserName("Morty");
+        morty.setSize(Sizes.CUARENTA);
+        morty.setAddress("Melrose Place, 90210, Los Angeles");
+        morty.setTotal(sneaker.price());
+        morty.payment("morty@paypal.com");
+
+        summer = new Entry("summer@business.com");
+        summer.setUserName("Summer");
+        summer.setSize(Sizes.CUARENTA);
+        summer.setAddress("Melrose Place, 90210, Los Angeles");
+        summer.setTotal(sneaker.price());
+        summer.payment("summer@paypal.com");
+
+
+        sneaker.register(birdman, morty, summer);
     }
 
     @Test
@@ -55,12 +84,19 @@ public class SneakerTest {
 
     @Test
     public void totalEntriesTest() {
-        //Se han intentado ingresar 2, pero solo debe haber uno porque está repetido
-        Integer esperado = 1;
+        //Se han intentado ingresar 5, pero solo debe haber 4 porque doubleEntry estaba repetido
+        Integer esperado = 4;
         assertEquals(esperado, sneaker.totalEntries());
     }
     @Test
     public void listEntriesTest(){
-        assertEquals("[squanchy@closet.in]", sneaker.listEntries());
+        assertEquals("[morty@business.com, summer@business.com, squanchy" +
+                "@closet.in, birdman@love.in]", sneaker.listEntries());
+    }
+    @Test
+    public void cancelTest(){
+        sneaker.cancel(summer);
+        Integer esperado = 3;
+        assertEquals(esperado, sneaker.totalEntries());
     }
 }

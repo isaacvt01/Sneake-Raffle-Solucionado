@@ -11,4 +11,6 @@ public interface Raffle {
     Integer totalEntries();
 
     String listEntries();
+
+    void cancel(Entry entry);
 }

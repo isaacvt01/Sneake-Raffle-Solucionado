@@ -42,6 +42,11 @@ public class Sneaker implements Raffle {
     }
 
     @Override
+    public void cancel(Entry entry) {
+        bucket.delete(entry);
+    }
+
+    @Override
     public void sizesRun(Sizes firsSize, Sizes lastSize){
        sizes = Sizes.getSizes(firsSize, lastSize).stream()
                 .toList()

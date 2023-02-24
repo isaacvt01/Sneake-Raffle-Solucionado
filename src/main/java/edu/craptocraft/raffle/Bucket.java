@@ -41,4 +41,8 @@ public class Bucket {
                 .toString();
 
     }
+
+    public void delete(Entry entry) {
+        entries.remove(entry);
+    }
 }
