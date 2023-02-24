@@ -116,5 +116,15 @@ public class App
         // Registra la participacion de Squanchy
         // Muestra el total de participaciones
         // en la rifa que ha de ser 1
+
+        craft.register(entry);
+        System.out.println("\t\tSquanchy in:" + craft.totalEntries());
+
+        // Squanchy intenta registrar otra participacion
+        // pero el sistema bloquea el registro.
+        // El total de participaciones sigue siendo 1
+
+        craft.register(entry);
+        System.out.println("\t\tSquanchy out!:" + craft.totalEntries());
     }
 }

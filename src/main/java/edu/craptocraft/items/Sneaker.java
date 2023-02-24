@@ -1,5 +1,6 @@
 package edu.craptocraft.items;
 
+import edu.craptocraft.raffle.Bucket;
 import edu.craptocraft.raffle.Entry;
 import edu.craptocraft.raffle.Raffle;
 
@@ -12,6 +13,8 @@ public class Sneaker implements Raffle {
     private final String name;
     private final Double price;
     private String[] sizes;
+
+    private Bucket bucket = new Bucket();
 
     public Sneaker(String name, String style, Double price){
         this.style = style;
@@ -26,12 +29,12 @@ public class Sneaker implements Raffle {
 
     @Override
     public void register(Entry entry) {
-
+        bucket.add(entry);
     }
 
     @Override
     public Integer totalEntries() {
-        return null;
+        return bucket.totalEntries();
     }
 
     @Override

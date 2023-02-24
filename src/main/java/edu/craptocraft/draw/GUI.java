@@ -4,6 +4,8 @@ import edu.craptocraft.raffle.Entry;
 import edu.craptocraft.raffle.Raffle;
 
 public class GUI {
+
+    public GUI(){}
     public static void drawSneaker(Raffle sneaker) {
         System.out.println(
                 "\t\t" + " _    _" + "\n" +

@@ -50,4 +50,6 @@ public class EntryTest {
                 "\t\tTotal: 109.99\n";
         assertEquals(esperado, entry.toString());
     }
+
+
 }

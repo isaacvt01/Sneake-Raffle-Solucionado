@@ -46,6 +46,24 @@ public class Entry {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Entry entry = (Entry) o;
+
+        if (!email.equals(entry.email)) return false;
+        return payment.equals(entry.payment);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = email.hashCode();
+        result = 31 * result + payment.hashCode(); //Se multiplica por 31 por conveción
+        return result;
+    }
+
+    @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         sb.append("\t\t").append("email: ").append(email).append("\n");
