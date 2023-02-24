@@ -135,5 +135,34 @@ public class App
         doubleEntry.payment("squanchy@paypal.com");
         craft.register(doubleEntry);
         System.out.println("\t\tSquanchy out!:" + craft.totalEntries());
+
+        Entry birdman = new Entry("birdman@love.in");
+        birdman.setUserName("Birdman");
+        birdman.setSize(Sizes.CUARENTA);
+        birdman.setAddress("Melrose Place, 90210, Los Angeles");
+        birdman.setTotal(craft.price());
+        birdman.payment("birdman@paypal.com");
+
+        Entry morty = new Entry("morty@business.com");
+        morty.setUserName("Morty");
+        morty.setSize(Sizes.CUARENTA);
+        morty.setAddress("Melrose Place, 90210, Los Angeles");
+        morty.setTotal(craft.price());
+        morty.payment("morty@paypal.com");
+
+        Entry summer = new Entry("summer@business.com");
+        summer.setUserName("Summer");
+        summer.setSize(Sizes.CUARENTA);
+        summer.setAddress("Melrose Place, 90210, Los Angeles");
+        summer.setTotal(craft.price());
+        summer.payment("summer@paypal.com");
+
+        craft.register(birdman, morty, summer);
+
+        /**
+         * Muestra el email de todos los participantes en la rifa.
+         */
+
+        System.out.println("\n\t\tEntries:\n\t\t" + craft.listEntries());
     }
 }

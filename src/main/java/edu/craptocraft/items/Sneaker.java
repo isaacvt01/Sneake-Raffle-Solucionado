@@ -5,8 +5,6 @@ import edu.craptocraft.raffle.Entry;
 import edu.craptocraft.raffle.Raffle;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Sneaker implements Raffle {
     private final String style;
@@ -28,13 +26,19 @@ public class Sneaker implements Raffle {
     }
 
     @Override
-    public void register(Entry entry) {
-        bucket.add(entry);
+    public void register(Entry... entry) {
+        Arrays.stream(entry).forEach(o -> bucket.add(o));
+
     }
 
     @Override
     public Integer totalEntries() {
         return bucket.totalEntries();
+    }
+
+    @Override
+    public String listEntries() {
+        return bucket.listEntries();
     }
 
     @Override

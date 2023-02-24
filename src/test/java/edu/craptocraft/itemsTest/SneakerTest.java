@@ -59,4 +59,8 @@ public class SneakerTest {
         Integer esperado = 1;
         assertEquals(esperado, sneaker.totalEntries());
     }
+    @Test
+    public void listEntriesTest(){
+        assertEquals("[squanchy@closet.in]", sneaker.listEntries());
+    }
 }

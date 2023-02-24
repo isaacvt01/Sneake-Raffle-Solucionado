@@ -1,7 +1,10 @@
 package edu.craptocraft.raffle;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Bucket {
     Random rand = new Random();
@@ -30,4 +33,12 @@ public class Bucket {
         return false;
     }
 
+
+    public String listEntries() {
+        return  entries.stream()
+                .map(Entry::email)
+                .toList()
+                .toString();
+
+    }
 }
