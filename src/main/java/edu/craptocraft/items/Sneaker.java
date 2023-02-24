@@ -1,5 +1,6 @@
 package edu.craptocraft.items;
 
+import edu.craptocraft.raffle.Entry;
 import edu.craptocraft.raffle.Raffle;
 
 import java.util.Arrays;
@@ -21,6 +22,16 @@ public class Sneaker implements Raffle {
     @Override
     public Double price(){
         return price;
+    }
+
+    @Override
+    public void register(Entry entry) {
+
+    }
+
+    @Override
+    public Integer totalEntries() {
+        return null;
     }
 
     @Override

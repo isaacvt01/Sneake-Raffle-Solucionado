@@ -6,4 +6,7 @@ public interface Raffle {
     public void sizesRun(Sizes firstSize, Sizes lastSize);
     public Double price();
 
+    void register(Entry entry);
+
+    Integer totalEntries();
 }

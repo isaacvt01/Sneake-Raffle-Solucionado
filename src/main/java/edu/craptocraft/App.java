@@ -3,6 +3,7 @@ package edu.craptocraft;
 import edu.craptocraft.draw.GUI;
 import edu.craptocraft.items.Sizes;
 import edu.craptocraft.items.Sneaker;
+import edu.craptocraft.raffle.Entry;
 import edu.craptocraft.raffle.Raffle;
 
 /**
@@ -72,5 +73,48 @@ public class App
         // indica el rango de tallas
         craft.sizesRun(Sizes.CUARENTA, Sizes.CUARENTAYDOS);
         GUI.drawSneaker(craft);
+
+        /**
+         * El usuario Squanchy introduce sus datos
+         * para obtener una participacion.
+         * - Nombre
+         * - Email
+         * - Talla
+         * - Direccion de envio
+         * - Metodo de pago
+         * - Total
+         *
+         * La igualdad de dos objetos Entry
+         * se determina por las propiedades
+         * email y método de pago.
+         */
+
+        Entry entry = new Entry("squanchy@closet.in");
+        entry.setUserName("Squanchy");
+        entry.setSize(Sizes.CUARENTA);
+        entry.setAddress("Nearest closet s/n, 90210, Jerry's House, Via Lactea");
+        entry.setTotal(craft.price());
+        entry.payment("squanchy@paypal.com");
+
+        /**
+         * Añade a la clase GUI la rutina drawEntry()
+         * para representar la entrada.
+         */
+        GUI.drawEntry(entry);
+
+        /**
+         * Añade la participacion en la rifa.
+         * El sistema comprueba que no existe doble
+         * entrada, es decir, que una misma
+         * persona registre dos participaciones.
+         * Has de chequear el correo electronico
+         * y el metodo de pago. Si uno de los dos
+         * es idéntico, se trata de la misma persona
+         * y no se añade la participacion a la rifa.
+         */
+
+        // Registra la participacion de Squanchy
+        // Muestra el total de participaciones
+        // en la rifa que ha de ser 1
     }
 }

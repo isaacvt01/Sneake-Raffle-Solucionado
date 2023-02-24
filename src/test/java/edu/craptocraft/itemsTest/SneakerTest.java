@@ -11,7 +11,7 @@ import edu.craptocraft.items.Sizes;
 public class SneakerTest {
     private Sneaker sneaker;
     @Before
-    public void inicializar() {
+    public void setUp() {
         sneaker = new Sneaker("Nike Craft General Purpose", "Brown", 109.99);
         sneaker.sizesRun(Sizes.CUARENTA, Sizes.CUARENTAYDOS);
     }
