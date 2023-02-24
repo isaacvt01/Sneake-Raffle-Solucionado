@@ -38,12 +38,18 @@ public class Sneaker implements Raffle {
 
     @Override
     public String listEntries() {
-        return bucket.listEntries();
+        return bucket.listEntries() + "\n";
     }
 
     @Override
     public void cancel(Entry entry) {
         bucket.delete(entry);
+    }
+
+    @Override
+    public Entry draw() {
+        Entry winner = bucket.draw().get();
+        return winner;
     }
 
     @Override
@@ -69,4 +75,6 @@ public class Sneaker implements Raffle {
         sb.append('\n');
         return sb.toString();
     }
+
+
 }

@@ -91,7 +91,7 @@ public class SneakerTest {
     @Test
     public void listEntriesTest(){
         assertEquals("[morty@business.com, summer@business.com, squanchy" +
-                "@closet.in, birdman@love.in]", sneaker.listEntries());
+                "@closet.in, birdman@love.in]\n", sneaker.listEntries());
     }
     @Test
     public void cancelTest(){

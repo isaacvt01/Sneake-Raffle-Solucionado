@@ -1,9 +1,6 @@
 package edu.craptocraft.raffle;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Bucket {
@@ -44,5 +41,14 @@ public class Bucket {
 
     public void delete(Entry entry) {
         entries.remove(entry);
+    }
+
+    public Optional<Entry> draw() {
+        int posicion = rand.nextInt(entries.size());
+        List<Entry> entriesList = entries.stream().toList();
+        Optional<Entry> ganador = entriesList.stream()
+                .filter(entry -> entriesList.indexOf(entry) == posicion)
+                .findAny();
+        return Optional.of(ganador.get());
     }
 }

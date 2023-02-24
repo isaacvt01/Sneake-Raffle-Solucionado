@@ -3,6 +3,8 @@ package edu.craptocraft;
 import edu.craptocraft.draw.GUI;
 import edu.craptocraft.items.Sizes;
 import edu.craptocraft.items.Sneaker;
+import edu.craptocraft.payment.Payment;
+import edu.craptocraft.payment.Paypal;
 import edu.craptocraft.raffle.Entry;
 import edu.craptocraft.raffle.Raffle;
 
@@ -172,6 +174,42 @@ public class App
 
         craft.cancel(summer);
         System.out.println("\n\t\tSummer is gone :\n\t\t" + craft.listEntries());
+
+
+        /**
+         * Extrae una participacion de la rifa.
+         * Es el ganador de la rifa.
+         * Printa sus datos por consola.
+         * Añade la rutina drawWinner() a GUI.
+         */
+
+        Entry winner = craft.draw();
+        GUI.drawWinner(winner);
+
+        /**
+         * Conecta con el sistema de pagos para
+         * realizar el cobro.
+         *
+         * El sistema de pagos autoriza el cargo
+         * si el usuario existe en el sistema
+         * y descuenta de sus fondos la cantidad
+         * que supone la rifa.
+         *
+         * Da de alta a los cuatro usuarios
+         * que hemos creado con su cuenta de correo
+         * en Paypal.
+         * Establece un credito inicial de 200€
+         * para todos.
+         */
+
+        Payment paypal = new Paypal();
+        boolean userExists = paypal.autentication(winner.getPayment());
+        boolean transaction = false;
+        if (userExists) {
+            transaction = paypal.pay(winner.getPayment(), winner.getTotal());
+        }
+
+        System.out.println("\t\t" + winner.getPayment() + " credit: " + paypal.credit(winner.getPayment()));
 
     }
 }

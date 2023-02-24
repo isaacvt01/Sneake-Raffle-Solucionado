@@ -20,4 +20,9 @@ public class GUI {
     public static void drawEntry(Entry entry) {
         System.out.println(entry.toString());
     }
+
+    public static void drawWinner(Entry winner) {
+        System.out.println("\t\t¡¡ You are the winner !! \n" +
+                winner.toString());
+    }
 }

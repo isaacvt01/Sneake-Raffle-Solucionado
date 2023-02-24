@@ -13,4 +13,6 @@ public interface Raffle {
     String listEntries();
 
     void cancel(Entry entry);
+
+    Entry draw();
 }

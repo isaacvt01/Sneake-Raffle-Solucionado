@@ -76,4 +76,8 @@ public class Entry {
         sb.append("\t\t").append("Total: ").append(total).append("\n");
         return sb.toString();
     }
+
+    public String getPayment() {
+        return payment;
+    }
 }
