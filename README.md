@@ -21,6 +21,18 @@ Cada participante tiene que añadir un método de pago. Si le toca, se intentar�
 
 Solo se permite una participación por persona, así que hay que verificar que nadie pueda participar varias veces.
 
+Además de reforzar los conceptos aprendidos en clase de:
+
+- TDD
+- Streams
+- Bucles
+- Solid (SRP, OCP, LSP, DIP)
+- Interfaces
+- Interpretación de documentos XML
+- Tipos enumerados
+- Principios básicos de POO (Abstracción, encapsulación,  polimorfismo)
+- Control de versiones con git (Creación de ramas, conventional commits)
+
 ## Mejoras
 
 En este repositorio intento hacer las cosas mejor que durante el examen, parándome a pensar un poco más e intentando hacer un desarrollo más limpio.
