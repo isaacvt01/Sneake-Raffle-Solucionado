@@ -37,4 +37,20 @@ public class BucketTest {
         Integer numEsperado = 1;
         assertEquals(numEsperado, bucket.totalEntries());
     }
+
+    @Test
+    public void deleteTest() {
+        Entry newEntry = new Entry("correodeejemplo@ejemplo.com");
+        newEntry.payment("norepetido@paypal.com");
+        bucket.add(newEntry);
+        bucket.delete(newEntry);
+        assertEquals(1, bucket.totalEntries().intValue());
+        String expected = "[squanchy@closet.in]";
+        assertEquals(expected, bucket.listEntries());
+    }
+
+    @Test
+    public void drawTest() {
+        assertNotNull(bucket.draw());
+    }
 }
