@@ -46,3 +46,29 @@ En este repositorio intento hacer las cosas mejor que durante el examen, paránd
 - Acabar la última hisotria de usuario.
 
 Disfruté bastante rehaciendo este examen, el dominio y la forma de redactarlo me pareció bastante entretenida. 
+
+
+## Diagrama UML
+
+Este es el diagrama UML que nos proporcionó nuestro profesor David Fleta.
+
+![Diagrama UML](docs/diagrama_de_clases_UML.png)
+
+## Historias de usuario
+
+Estas son las siguientes historias de usuario por las que nos debíamos guiar.
+
+![Primera historia de usuario](docs/US_01.jpg)
+
+![Segunda historia de usuario](docs/US_02.jpg)
+
+![Tercera historia de usuario](docs/US_03.jpg)
+
+![Cuarta historia de usuario](docs/US_04.jpg)
+
+## Salida por consola
+
+Esta es la salida por consola esperada.
+
+![Salida por consola](docs/UI_01.png)
+
