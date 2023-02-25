@@ -1,7 +1,6 @@
 # Sneaker Raffle solucionado
 
 En este repositorio se encuentra la solución del examen Sneaker Raffle realizado por nuestro tutor de DAW Dual, [David Gelpi](https://github.com/dfleta).
-
 ## Herramientas
 
 El proyecto se tenía que desarrollar a partir de las herramientas que nos ofreció dfleta en el [repositorio del examen](https://github.com/dfleta/sneaker-raffle) , que fueron:
@@ -72,3 +71,7 @@ Esta es la salida por consola esperada.
 
 ![Salida por consola](docs/UI_01.png)
 
+
+Para más información, recoiendo visitar el [repositorio del examen original](https://github.com/dfleta/sneaker-raffle), donde todo está perfectamente explicado en el README.
+
+El diagrama, las historias de usuario y la salida por consola han sido proporcionados por [dfleta](https://github.com/dfleta).
