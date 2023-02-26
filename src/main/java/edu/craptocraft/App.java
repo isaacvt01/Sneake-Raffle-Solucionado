@@ -202,7 +202,7 @@ public class App
          * para todos.
          */
 
-        Payment paypal = new Paypal();
+        Payment paypal = new Paypal(craft);
         boolean userExists = paypal.autentication(winner.getPayment());
         boolean transaction = false;
         if (userExists) {

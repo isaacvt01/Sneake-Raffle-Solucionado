@@ -5,6 +5,7 @@ import edu.craptocraft.raffle.Entry;
 import edu.craptocraft.raffle.Raffle;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Sneaker implements Raffle {
     private final String style;
@@ -50,6 +51,11 @@ public class Sneaker implements Raffle {
     public Entry draw() {
         Entry winner = bucket.draw().get();
         return winner;
+    }
+
+    @Override
+    public List<Entry> entries() {
+        return bucket.entries();
     }
 
     @Override

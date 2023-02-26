@@ -78,6 +78,6 @@ public class Entry {
     }
 
     public String getPayment() {
-        return payment;
+        return this.payment;
     }
 }

@@ -1,6 +1,7 @@
 package edu.craptocraft.raffle;
-
 import edu.craptocraft.items.Sizes;
+import java.util.List;
+
 
 public interface Raffle {
     public void sizesRun(Sizes firstSize, Sizes lastSize);
@@ -15,4 +16,5 @@ public interface Raffle {
     void cancel(Entry entry);
 
     Entry draw();
+    public List<Entry> entries();
 }

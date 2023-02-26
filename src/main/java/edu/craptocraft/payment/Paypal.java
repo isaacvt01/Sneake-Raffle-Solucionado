@@ -1,15 +1,18 @@
 package edu.craptocraft.payment;
 
+import edu.craptocraft.raffle.Entry;
+import edu.craptocraft.raffle.Raffle;
+
 import java.util.HashMap;
 
 public class Paypal implements Payment{
 
     private HashMap<String, Double> users = new HashMap<>();
-
-    public Paypal() {
-        users.put("morty@paypal.com", 200.00);
-        users.put("birdman@paypal.com", 200.00);
-        users.put("squanchy@paypal.com", 200.00);
+    //Se introduce en el constructor el objeto de tipo Raffle para que coja todas las personas dentro y añada su cuenta de Paypal de manera automática
+    public Paypal(Raffle item) {
+        item.entries().stream()
+                .map(Entry::getPayment)
+                .forEach(payment -> users.putIfAbsent(payment, 200d));
     }
 
     @Override

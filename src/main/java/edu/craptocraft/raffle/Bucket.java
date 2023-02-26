@@ -1,7 +1,6 @@
 package edu.craptocraft.raffle;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Bucket {
     Random rand = new Random();
@@ -50,5 +49,9 @@ public class Bucket {
                 .filter(entry -> entriesList.indexOf(entry) == posicion)
                 .findAny();
         return Optional.of(ganador.get());
+    }
+
+    public List<Entry> entries() {
+        return this.entries.stream().toList();
     }
 }
